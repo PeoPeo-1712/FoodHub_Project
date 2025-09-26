@@ -10,8 +10,5 @@ app.get("/api/hello", (req, res) => {
   res.json({ message: "Hello từ FH_BackEnd!" });
 });
 
-// Export app thuần cho dev local
-export { app };
-
 // Export serverless cho Vercel
 export default serverless(app);
