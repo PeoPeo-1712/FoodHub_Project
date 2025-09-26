@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: FH_infra/Dockerfile
+      args:
+        NODE_ENV: ${COMPOSE_MODE}
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    command: >
+      sh -c "if [ '${COMPOSE_MODE}' = 'dev' ]; then npm run dev; else node index.js; fi"
