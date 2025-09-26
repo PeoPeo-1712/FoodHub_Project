@@ -1,15 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "FH_BackEnd/server.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "FH_BackEnd/server.js"
-    }
+    { "src": "/api/(.*)", "dest": "FH_BackEnd/api/$1.js" },
+    { "src": "/(.*)", "dest": "FH_FrontEnd/dist/$1" }
   ]
 }
