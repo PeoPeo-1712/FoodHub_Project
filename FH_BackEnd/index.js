@@ -1,3 +1,7 @@
-import app from "../server.js"; // import app Express
+// FH_BackEnd/index.js
+import app from "./api/hello.js"; // chỉ để chạy dev
+const PORT = process.env.PORT || 3000;
 
-export default app; // Vercel sẽ chạy như serverless
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => console.log(`Dev server running on port ${PORT}`));
+}
