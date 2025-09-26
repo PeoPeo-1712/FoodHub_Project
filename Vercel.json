@@ -1,11 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } },
-    { "src": "api/**/*.js", "use": "@vercel/node" }
+    { "src": "FH_FrontEnd/package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } },
+    { "src": "FH_BackEnd/api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1.js" },
+    { "src": "/api/(.*)", "dest": "/FH_BackEnd/api/$1.js" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
